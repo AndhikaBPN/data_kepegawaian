@@ -43,7 +43,7 @@ $result = mysqli_query($conn, $query);
     <section class="home-info" id="info">
     <div class="info-header">
     <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="Absensi Icon" class="icon">
-    <h2 class="heading">Data Absensi<span> Karyawan</span></h2>
+    <h2 class="heading">Data <span> Absensi Karyawan</span></h2>
     </div>
     
     <div class="kontrol">
