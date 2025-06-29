@@ -31,7 +31,7 @@ function getAbsensi() {
     $end_date   = date('Y-m-t');
 
     $queryAbsen = "SELECT status, COUNT(*) AS total FROM absensi WHERE DATE(absen_masuk) BETWEEN '$start_date' AND '$end_date' GROUP BY status";
-    $queryCuti = "SELECT COUNT(*) AS total FROM cuti WHERE status = 'Disetujui' AND tanggal_mulai <= '2025-07-31' AND tanggal_selesai >='2025-07-01';";
+    $queryCuti = "SELECT COUNT(*) AS total FROM cuti WHERE status = 'Disetujui' AND tanggal_mulai <= '$end_date' AND tanggal_selesai >='$start_date';";
     $resultAbsen = mysqli_query($conn, $queryAbsen);
     $resultCuti = mysqli_query($conn, $queryCuti);
     
@@ -69,6 +69,60 @@ switch ($type) {
     default:
         echo json_encode([]);
         break;
+}
+
+function getTotalKaryawan() {
+    global $conn;
+
+    $query = "SELECT COUNT(*) AS total FROM user WHERE status = 1";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+function getTotalDivisi() {
+    global $conn;
+
+    $query = "SELECT COUNT(*) AS total FROM divisi";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+function getListBirthday() {
+    global $conn;
+
+    setlocale(LC_TIME, 'id_ID');
+
+    $start_date = date('Y-m-01');
+    $end_date   = date('Y-m-t'); 
+
+    $query = "SELECT u.nama, u.tgl_lahir, d.nama_divisi FROM user u JOIN divisi d ON u.id_divisi = d.id WHERE u.status = 1 AND DATE(u.tgl_lahir) BETWEEN '$start_date' AND '$end_date';";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+function getListCuti() {
+    global $conn;
+    
+    $start_date = date('Y-m-01');
+    $end_date   = date('Y-m-t'); 
+    
+    $query = "SELECT
+                    u.nama,
+                    d.nama_divisi,
+                    c.tanggal_mulai,
+                    c.tanggal_selesai
+                FROM
+                    cuti c
+                JOIN
+                    user u ON c.id_user = u.id
+                JOIN
+                    divisi d ON u.id_divisi = d.id
+                WHERE
+                    c.status = 'Disetujui' AND tanggal_mulai <= '$end_date' AND tanggal_selesai >= '$start_date';";
+    $result = mysqli_query($conn, $query);
+    return $result;
 }
 
 ?>
