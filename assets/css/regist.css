@@ -12,7 +12,7 @@
     }
 
     body {
-      background: url('../images/login.jpg') center center / cover no-repeat;
+      background: url('../img/login.jpeg') center center / cover no-repeat;
       background-size: cover;
       background-attachment: fixed;
     }
