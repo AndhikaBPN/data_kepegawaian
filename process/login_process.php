@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $data_login['username'];
         $_SESSION['role'] = $data_login['id_role'];
 
-        header("Location: http://localhost/data_kepegawaian/pages/home.php");
+        header("Location: http://localhost/data_kepegawaian/pages/beranda.php");
         exit;
     } else {
         $_SESSION['error'] = "Username atau password salah";
