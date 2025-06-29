@@ -25,11 +25,10 @@
       <a href="#" class="logo">Project Candi Pt.2</a>
 
       <nav class="navbar">
-        <a href="../pages/home.php">BERANDA</a>
+        <a href="../pages/beranda.php">BERANDA</a>
         <a href="../pages/karyawan.php">KARYAWAN</a>
         <a href="../pages/absensiUser.php">ABSENSI</a>
         <a href="../pages/cutiUser.php">CUTI</a>
-        <a href="../pages/laporan.php">LAPORAN</a>
         <a href="../process/logout_process.php" class="logout"><i class='bx bx-log-out'></i></a>
       </nav>
 
