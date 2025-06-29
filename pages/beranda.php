@@ -121,6 +121,7 @@ $resultCuti = getListCuti();
       <canvas id="doughnut"></canvas>
     </div>
   </div>
+  </section>
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
