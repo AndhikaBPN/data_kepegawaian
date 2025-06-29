@@ -107,3 +107,6 @@ ALTER TABLE `cuti`
 CHANGE `status` `status` 
 ENUM('Menunggu','Disetujui','Ditolak','Dibatalkan') 
 CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'Menunggu';
+
+INSERT INTO user (username, password, id_role, nip, nama, id_jabatan, id_divisi, tgl_lahir, jenis_kelamin, alamat, no_hp, status) 
+VALUES ('admin', 'admin123', '1', '000', 'Admin', '1', '1', '0001-01-01', 'Laki-laki', '-', '000000000000', '1');
