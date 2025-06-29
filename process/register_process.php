@@ -18,7 +18,7 @@ if(isset($_POST['register'])) {
                 VALUES ('$username', '$password', 2, '$nip', '$nama', '$id_jabatan', '$tgl_lahir', '$jenis_kelamin', '$alamat', '$no_hp', 1, '$id_divisi')";
     mysqli_query($conn, $query);
 
-    header("Location: http://localhost/data_kepegawaian/index.php");
+    header("Location: ../index.php");
 } else {
     header("Location: register.php");
 }

@@ -8,7 +8,7 @@ if (!isset($_SESSION['role'])) {
 // Fungsi untuk membatasi role
 function checkCuti($allowed_roles = []) {
     if (!in_array($_SESSION['role'], $allowed_roles)) {
-        header("Location: http://localhost/data_kepegawaian/pages/cuti.php");
+        header("Location: ../pages/cuti.php");
     } else {
         
     }
@@ -16,7 +16,7 @@ function checkCuti($allowed_roles = []) {
 
 function checkAbsensi($allowed_roles = []) {
     if (!in_array($_SESSION['role'], $allowed_roles)) {
-        header("Location: http://localhost/data_kepegawaian/pages/absensi.php");
+        header("Location: ../pages/absensi.php");
     } else {
 
     }

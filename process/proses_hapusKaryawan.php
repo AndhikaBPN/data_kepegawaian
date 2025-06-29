@@ -7,10 +7,10 @@ $id = $_GET['id'];
 if (isset($id)) {
     $query = "UPDATE user SET status = 0 WHERE id = $id";
     mysqli_query($conn, $query);
-    header("Location: http://localhost/data_kepegawaian/pages/karyawan.php");
+    header("Location: ../pages/karyawan.php");
 } else {
     echo "ID tidak ditemukan";
-    header("Location: http://localhost/data_kepegawaian/pages/karyawan.php");
+    header("Location: ../pages/karyawan.php");
 }
 
 ?>

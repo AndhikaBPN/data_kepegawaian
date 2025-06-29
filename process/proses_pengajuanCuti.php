@@ -11,10 +11,10 @@ function insertLeave($id_user, $tanggal_pengajuan, $tanggal_mulai, $tanggal_sele
     $result = mysqli_query($conn, $query);
     if($result) {
         $_SESSION['msg'] = "Pengajuan cuti berhasil dikirim";
-        header("Location: http://localhost/data_kepegawaian/pages/cutiUser.php");
+        header("Location: ../pages/cutiUser.php");
     } else {
         $_SESSION['msg'] = "Pengajuan cuti gagal dikirim";
-        header("Location: http://localhost/data_kepegawaian/pages/cutiUser.php");
+        header("Location: ../pages/cutiUser.php");
     }
 }
 
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
 
     if (strtotime($tanggal_selesai) <= strtotime($tanggal_mulai)) {
         $_SESSION['msg'] = "Tanggal selesai harus lebih besar dari tanggal mulai";
-        header("Location: http://localhost/data_kepegawaian/pages/cutiUser.php");
+        header("Location: ../pages/cutiUser.php");
         exit();
     }
 
@@ -45,10 +45,10 @@ function cancelLeave($id) {
     $result = mysqli_query($conn, $query);
     if($result) {
         $_SESSION['msg'] = "Pengajuan cuti berhasil dibatalkan";
-        header("Location: http://localhost/data_kepegawaian/pages/cutiUser.php");
+        header("Location: ../pages/cutiUser.php");
     } else {
         $_SESSION['msg'] = "Pengajuan cuti gagal dibatalkan";
-        header("Location: http://localhost/data_kepegawaian/pages/cutiUser.php");
+        header("Location: ../pages/cutiUser.php");
     }
 }
 
@@ -64,10 +64,10 @@ function approveLeave($id) {
     $result = mysqli_query($conn, $query);
     if($result) {
         $_SESSION['msg'] = "Pengajuan cuti berhasil disetujui";
-        header("Location: http://localhost/data_kepegawaian/pages/cuti.php");
+        header("Location: ../pages/cuti.php");
     } else {
         $_SESSION['msg'] = "Pengajuan cuti gagal disetujui";
-        header("Location: http://localhost/data_kepegawaian/pages/cuti.php");
+        header("Location: ../pages/cuti.php");
     }
 }
 
@@ -83,10 +83,10 @@ function rejectLeave($id) {
     $result = mysqli_query($conn, $query);
     if($result) {
         $_SESSION['msg'] = "Pengajuan cuti berhasil ditolak";
-        header("Location: http://localhost/data_kepegawaian/pages/cuti.php");
+        header("Location: ../pages/cuti.php");
     } else {
         $_SESSION['msg'] = "Pengajuan cuti gagal ditolak";
-        header("Location: http://localhost/data_kepegawaian/pages/cuti.php");
+        header("Location: ../pages/cuti.php");
     }
 }
 

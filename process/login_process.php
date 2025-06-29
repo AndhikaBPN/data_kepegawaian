@@ -26,11 +26,11 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $data_login['username'];
         $_SESSION['role'] = $data_login['id_role'];
 
-        header("Location: http://localhost/data_kepegawaian/pages/beranda.php");
+        header("Location: ../pages/beranda.php");
         exit;
     } else {
         $_SESSION['error'] = "Username atau password salah";
-        header("Location: http://localhost/data_kepegawaian/index.php");
+        header("Location: ../index.php");
         exit;
     }
     

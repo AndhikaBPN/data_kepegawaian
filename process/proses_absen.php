@@ -17,7 +17,7 @@ function insertClockIn($id_user) {
 
     $result = mysqli_query($conn, $query);
     if ($result) {
-        header("Location: http://localhost/data_kepegawaian/pages/absensiUser.php");
+        header("Location: ../pages/absensiUser.php");
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
@@ -53,7 +53,7 @@ function insertClockOut($id_user) {
 
     $result = mysqli_query($conn, $query);
     if ($result) {
-        header("Location: http://localhost/data_kepegawaian/pages/absensiUser.php");
+        header("Location: ../pages/absensiUser.php");
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
@@ -140,7 +140,7 @@ if(isset($_POST['clockIn'])) {
     $id_user = $_SESSION['id'];
     if(checkClockIn($id_user)) {
         $_SESSION['msg'] = "Anda sudah melakukan absen masuk";
-        header("Location: http://localhost/data_kepegawaian/pages/absensiUser.php");
+        header("Location: ../pages/absensiUser.php");
         return;
     }
     insertClockIn($id_user);
@@ -150,7 +150,7 @@ if (isset($_POST['clockOut'])) {
     $id_user = $_SESSION['id'];
     if(checkClockOut($id_user)) {
         $_SESSION['msg'] = "Anda sudah melakukan absen keluar";
-        header("Location: http://localhost/data_kepegawaian/pages/absensiUser.php");
+        header("Location: ../pages/absensiUser.php");
         return;
     }
     insertClockOut($id_user);
