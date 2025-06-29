@@ -104,94 +104,15 @@ section {
   padding: 10rem 7% 2rem;
 }
 
-.btn-reset {
-  background: #ccc;
-  color: #000;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
-.badge {
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 12px;
-  display: inline-block;
-  text-align: center;
-  min-width: 100px;
-}
-
-/* Transparan warna berdasarkan status */
-.status-menunggu {
-  background-color: rgba(255, 193, 7, 0.2); /* kuning */
-  color: #ffc107;
-  border: 1px solid #ffc107;
-}
-
-.status-disetujui {
-  background-color: rgba(40, 167, 69, 0.2); /* hijau */
-  color: #28a745;
-  border: 1px solid #28a745;
-}
-
-.status-ditolak {
-  background-color: rgba(220, 53, 69, 0.2); /* merah */
-  color: #dc3545;
-  border: 1px solid #dc3545;
-}
-
-.status-dibatalkan {
-  background-color: rgba(255, 99, 132, 0.15); /* merah muda */
-  color: #ff6384;
-  border: 1px solid #ff6384;
-}
-
-.row-terlambat {
-    background-color: rgba(255, 99, 71, 0.2); /* soft red */
-}
-
-.btn-cancel {
-  background-color: #f44336; /* Merah */
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-approve {
-  background-color: #2cc92c; /* Merah */
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-reject {
-  background-color: #f44336; /* Merah */
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-cancel:hover {
-  background-color: #d32f2f;
+span {
+  color: var(--main-color);
 }
 
 .icon-edit {
@@ -210,17 +131,6 @@ section {
 
 .icon-delete:hover {
   color: #cc0d0d;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-
-span {
-  color: var(--main-color);
 }
 
 .btn {
@@ -265,6 +175,84 @@ span {
 .logout i:hover {
   color: darkred;
 }
+
+.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 100px;
+      padding: 15px;
+    }
+
+    h2{
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .box {
+      border-radius: 1rem;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      min-height: 150px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .box1 {
+      color: #fff;
+      justify-content: center;
+    }
+
+    .box3,
+    .box5 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box3 canvas,
+    .box5 canvas {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .scrollable-table {
+      flex: 1;
+      overflow-y: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .scrollable-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .card-value {
+      font-size: 30px;
+      font-weight: bold;
+      color: #5c5959;
+    }
 
 .home-info h2 {
   font-size: 36px;
@@ -342,6 +330,114 @@ span {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.row-terlambat {
+    background-color: rgba(255, 99, 71, 0.2); /* soft red */
+}
+
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Transparan warna berdasarkan status */
+.status-menunggu {
+  background-color: rgba(255, 193, 7, 0.2); /* kuning */
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+
+.status-disetujui {
+  background-color: rgba(40, 167, 69, 0.2); /* hijau */
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.status-ditolak {
+  background-color: rgba(220, 53, 69, 0.2); /* merah */
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.status-dibatalkan {
+  background-color: rgba(255, 99, 132, 0.15); /* merah muda */
+  color: #ff6384;
+  border: 1px solid #ff6384;
+}
+
+.btn-approve,
+.btn-reject {
+  padding: 6px 14px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Approve button - Green */
+.btn-approve {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-approve:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Reject button - Red */
+.btn-reject {
+  background-color: #F44336;
+  color: white;
+}
+
+.btn-reject:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.btn-reset {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-reset:active {
+  background-color: #cfcfcf;
+  transform: scale(0.98);
+}
+
+.btn-cancel {
+  background-color: #f44336; /* Merah */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:hover {
+  background-color: #d32f2f;
 }
 
 .rekap-filter {
