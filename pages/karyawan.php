@@ -51,9 +51,6 @@ $result = mysqli_query($conn, $resSearch);
           <input type="text" name="search" value="<?= htmlspecialchars($search); ?>" placeholder="Searchbar" class="searchbar" />
           <input type="submit" value="Cari" hidden>
         </form>
-        <?php if ($_SESSION['role'] == 1) { ?>
-          <button class="tambah"> + Tambah Data</button>
-        <?php } ?>
       </div>
 
       <div class="table-container">
