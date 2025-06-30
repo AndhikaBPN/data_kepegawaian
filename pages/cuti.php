@@ -18,12 +18,26 @@ $resSearchPendingCuti = "SELECT c.id, c.tanggal_pengajuan, c.tanggal_mulai, c.ta
 $result = mysqli_query($conn, $resSearchPendingCuti);
 
 $searchFinalStatusCuti = isset($_GET['searchFinalStatusCuti']) ? $_GET['searchFinalStatusCuti'] : '';
-$resSearchFinalStatusCuti = "SELECT c.tanggal_pengajuan, c.tanggal_mulai, c.tanggal_selesai, c.alasan, u.nama, u.nip, c.status
-                          FROM cuti c
-                          JOIN user u ON c.id_user = u.id 
-                          WHERE c.status = 'Disetujui' OR c.status = 'Ditolak' OR c.status = 'Dibatalkan' AND
-                          (u.nip LIKE '%$searchFinalStatusCuti%' OR u.nama LIKE '%$searchFinalStatusCuti%') 
-                          ORDER BY c.tanggal_pengajuan ASC";
+$resSearchFinalStatusCuti = "SELECT
+                                c.tanggal_pengajuan,
+                                c.tanggal_mulai,
+                                c.tanggal_selesai,
+                                c.alasan,
+                                u.nama,
+                                u.nip,
+                                c.status
+                              FROM
+                                cuti c
+                              JOIN USER u ON
+                                c.id_user = u.id
+                              WHERE
+                                (
+                                    u.nip LIKE '%$searchFinalStatusCuti%' OR u.nama LIKE '%$searchFinalStatusCuti%'
+                                )
+                              AND
+                                c.status IN ('Disetujui', 'Ditolak', 'Dibatalkan')
+                              ORDER BY
+                                c.tanggal_pengajuan ASC;";
 $resultFinal = mysqli_query($conn, $resSearchFinalStatusCuti);
 
 ?>
